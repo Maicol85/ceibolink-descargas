@@ -2,7 +2,9 @@
 
 El puente entre el ecógrafo y EcoSmart. Recibe las imágenes que manda el equipo y las deja listas para que EcoSmart las levante. Corre en tu computadora y no se conecta a internet.
 
-## [Descargar la última versión para Mac](https://github.com/Maicol85/ceibolink-descargas/releases/latest)
+## [Descargar CeiboLink 1.1.1 para Mac](https://github.com/Maicol85/ceibolink-descargas/releases/latest/download/CeiboLink-1.1.1.pkg)
+
+Si el botón no baja el archivo, entrá a [la página de la última versión](https://github.com/Maicol85/ceibolink-descargas/releases/latest) y bajá el archivo que termina en .pkg, en la sección Assets.
 
 ## Qué necesitás
 
@@ -12,7 +14,7 @@ El puente entre el ecógrafo y EcoSmart. Recibe las imágenes que manda el equip
 
 ## Cómo instalarlo
 
-1. Entrá a la página de la última versión (el enlace de arriba) y bajá el archivo que termina en .pkg, en la sección Assets.
+1. Bajá el archivo con el botón de arriba. Termina en .pkg y queda en tu carpeta de Descargas.
 2. Abrilo con doble clic. Como todavía no está firmado, macOS avisa que no pudo verificarlo. Para aprobarlo: Ajustes del Sistema → Privacidad y seguridad → Abrir igualmente. Los nombres pueden variar según tu versión de macOS.
 3. Seguí los pasos del instalador. Te va a pedir tu contraseña o tu huella.
 4. Al terminar, abrí «Vincular CeiboLink» desde la carpeta Aplicaciones. Te muestra un código de 6 dígitos.
