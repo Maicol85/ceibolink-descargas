@@ -1,0 +1,333 @@
+/* Página de descargas de CeiboLink. Mobile-first: todo se escribe para el celular
+   y los dos únicos puntos de quiebre agrandan, nunca al revés.
+   Sin fuentes ni imágenes externas: la protección es default-src 'none'. */
+
+:root{
+  --tinta:#17212b;
+  --tinta-suave:#4a5968;
+  --papel:#ffffff;
+  --fondo:#f2f5f8;
+  --borde:#d6dee6;
+  --ceibo:#b5283c;        /* el rojo del ceibo, para el botón */
+  --ceibo-oscuro:#8d1f2e;
+  --destacado:#0b6b73;    /* el sistema detectado */
+  --aviso-fondo:#fff8e6;
+  --aviso-borde:#e0b64a;
+}
+
+*{box-sizing:border-box}
+
+html{
+  -webkit-text-size-adjust:100%;   /* que iOS no agrande el texto al girar */
+}
+
+body{
+  margin:0;
+  padding:0 16px 48px;             /* 16 px de aire al costado, pedidos por el celular */
+  background:var(--fondo);
+  color:var(--tinta);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size:17px;                  /* nunca por debajo de 16 px en el cuerpo */
+  line-height:1.6;
+  overflow-wrap:break-word;        /* que una huella de 64 caracteres no desborde */
+  word-break:break-word;
+}
+
+/* ---------- cabecera ---------- */
+
+.cabecera{
+  max-width:40rem;
+  margin:0 auto;
+  padding:32px 0 8px;
+}
+
+h1{
+  margin:0 0 8px;
+  font-size:2rem;
+  line-height:1.2;
+  letter-spacing:-0.01em;
+}
+
+.bajada{
+  margin:0 0 12px;
+  color:var(--tinta-suave);
+}
+
+.version{
+  margin:0;
+  font-weight:600;
+  font-size:0.95rem;
+  color:var(--tinta-suave);
+}
+
+/* ---------- el cartel del sistema detectado ---------- */
+
+.deteccion{
+  max-width:40rem;
+  margin:20px auto 0;
+  padding:12px 14px;
+  background:#e6f1f2;
+  border-left:4px solid var(--destacado);
+  border-radius:4px;
+  font-size:0.95rem;
+}
+
+.dos-botones{
+  max-width:40rem;
+  margin:20px auto 24px;
+  color:var(--tinta-suave);
+}
+
+/* ---------- las dos tarjetas ---------- */
+
+main{
+  display:block;
+}
+
+/* Las dos tarjetas van en una columna flexible ya en el celular, y no sólo en el
+   escritorio, para que el `order` que pone descarga.js sirva EN LOS DOS TAMAÑOS.
+   Si esto fuera `display:block`, el sistema detectado quedaría resaltado pero
+   segundo en el celular, que es donde más cuesta bajar: el resaltado diría una
+   cosa y el orden otra. */
+.sistemas{
+  display:flex;
+  flex-direction:column;
+}
+
+/* El orden lo pone descarga.js: el sistema detectado va primero. Estas dos
+   reglas van ACÁ y no adentro de un punto de quiebre: metidas en el de
+   escritorio, en el celular la tarjeta resaltada quedaba segunda y había que
+   pasar de largo la otra entera para llegar al botón que sí servía. */
+.tarjeta.primera{order:0}
+.tarjeta.segunda{order:1}
+
+.tarjeta,
+.bloque{
+  max-width:40rem;
+  margin:0 auto 24px;
+  padding:20px 16px;
+  background:var(--papel);
+  border:1px solid var(--borde);
+  border-radius:10px;
+}
+
+/* El sistema detectado se resalta. Sin JavaScript nadie lleva esta clase y las
+   dos tarjetas quedan exactamente iguales, que es lo que tiene que pasar. */
+.tarjeta.destacada{
+  border:2px solid var(--destacado);
+  box-shadow:0 2px 10px rgba(11,107,115,0.14);
+}
+
+.tarjeta h2,
+.bloque h2{
+  margin:0 0 12px;
+  font-size:1.45rem;
+  line-height:1.25;
+}
+
+.marca-sistema{
+  margin:-6px 0 12px;
+  font-size:0.9rem;
+  font-weight:600;
+  color:var(--destacado);
+}
+
+.requisitos{
+  margin:0 0 20px;
+  padding:12px 14px;
+  background:var(--fondo);
+  border-radius:6px;
+  font-size:0.95rem;
+}
+
+h3{
+  margin:24px 0 10px;
+  font-size:1.1rem;
+  line-height:1.3;
+}
+
+.avisos h3{
+  margin-top:0;
+}
+
+.aviso{
+  margin:0 0 14px;
+  padding:12px 14px;
+  background:var(--aviso-fondo);
+  border-left:4px solid var(--aviso-borde);
+  border-radius:4px;
+  font-size:0.95rem;
+}
+
+.aviso p{margin:0 0 8px}
+.aviso p:last-child{margin-bottom:0}
+
+.aviso-titulo{
+  font-weight:700;
+}
+
+.aviso ol{
+  margin:8px 0;
+  padding-left:22px;
+}
+
+.aviso li{margin-bottom:6px}
+
+/* ---------- el botón ---------- */
+
+.caja-boton{
+  margin:24px 0 16px;
+}
+
+.boton{
+  display:block;                   /* en el celular ocupa el ancho entero */
+  width:100%;
+  padding:16px 20px;               /* alto real por encima de 44 px */
+  min-height:52px;
+  background:var(--ceibo);
+  color:#fff;
+  border-radius:8px;
+  font-size:1.1rem;
+  font-weight:700;
+  text-align:center;
+  text-decoration:none;
+}
+
+.boton:hover,
+.boton:focus{
+  background:var(--ceibo-oscuro);
+}
+
+.boton:focus-visible{
+  outline:3px solid var(--tinta);
+  outline-offset:2px;
+}
+
+/* ---------- la ficha del archivo ---------- */
+
+.ficha{
+  margin:0 0 8px;
+  padding:14px;
+  background:var(--fondo);
+  border-radius:6px;
+  font-size:0.9rem;
+}
+
+.ficha dt{
+  font-weight:700;
+  margin-top:10px;
+}
+
+.ficha dt:first-child{margin-top:0}
+
+.ficha dd{
+  margin:2px 0 0;
+  color:var(--tinta-suave);
+}
+
+code{
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:0.88em;
+}
+
+/* La huella son 64 caracteres sin espacios: tiene que poder cortarse en
+   cualquier letra o se sale de la pantalla del celular. */
+.huella{
+  display:block;
+  overflow-wrap:anywhere;
+  word-break:break-all;
+  line-height:1.5;
+}
+
+/* ---------- listas y bloques ---------- */
+
+ol,ul{
+  margin:0 0 12px;
+  padding-left:24px;
+}
+
+li{margin-bottom:8px}
+
+.quitar{
+  margin:16px 0 0;
+  padding:12px 14px;
+  background:var(--fondo);
+  border-radius:6px;
+  font-size:0.95rem;
+}
+
+.cuidados li{font-weight:500}
+
+a{
+  color:var(--destacado);
+  text-decoration:underline;
+}
+
+/* Los enlaces sueltos de las listas y del pie se tocan con el dedo, así que
+   necesitan alto de verdad y no el de una línea de texto. Medidos en el
+   navegador a 375 px daban 20 px de alto: el comprobador estático no los ve
+   —no sabe cuánto mide una línea— y por eso esto se arregla con la medición
+   del navegador al lado, no con la lista del comprobador. */
+main li > a,
+.pie a{
+  display:inline-block;
+  min-height:44px;
+  padding:11px 2px;
+  line-height:22px;
+}
+
+/* Adentro de un párrafo un enlace NO se vuelve bloque: partiría el renglón.
+   Ahí el área se agranda sin mover el texto. */
+main p a{
+  padding:6px 0;
+}
+
+.pie{
+  max-width:40rem;
+  margin:32px auto 0;
+  color:var(--tinta-suave);
+  font-size:0.9rem;
+}
+
+/* ---------- tablet ---------- */
+
+@media (min-width:600px){
+  body{padding:0 24px 56px}
+  .tarjeta,.bloque{padding:24px}
+  h1{font-size:2.3rem}
+  .boton{
+    display:inline-block;
+    width:auto;
+    min-width:16rem;
+  }
+}
+
+/* ---------- escritorio: las dos tarjetas una al lado de la otra ---------- */
+
+@media (min-width:980px){
+  main{
+    max-width:76rem;
+    margin:0 auto;
+  }
+  .tarjeta{
+    max-width:none;
+    margin-bottom:0;
+  }
+  .cabecera,.deteccion,.dos-botones,.bloque,.pie{
+    max-width:76rem;
+  }
+  .sistemas{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:24px;
+    align-items:start;
+    margin-bottom:24px;
+  }
+  /* En dos columnas el `order` acomoda cuál queda a la izquierda. */
+}
+
+/* ---------- impresión y preferencias ---------- */
+
+@media (prefers-reduced-motion:reduce){
+  *{transition:none !important;animation:none !important}
+}

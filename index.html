@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="CeiboLink: el puente entre el ecografo y EcoSmart. Descarga para Windows y para Mac.">
+<title>Descargar CeiboLink</title>
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+<header class="cabecera">
+  <h1>CeiboLink</h1>
+  <p class="bajada">El puente entre el ecógrafo y EcoSmart. Recibe las imágenes que manda el
+  equipo y las deja listas para que EcoSmart las levante. Corre en tu computadora y no se
+  conecta a internet.</p>
+  <p class="version">Versión 1.4.0</p>
+</header>
+
+<main>
+
+  <p id="deteccion" class="deteccion" hidden></p>
+
+  <p class="dos-botones">Abajo están los dos instaladores. Bajá el que corresponda a la
+  computadora donde vas a conectar el ecógrafo.</p>
+
+  <div class="sistemas">
+
+  <!-- Windows -->
+  <section class="tarjeta" id="tarjeta-windows" aria-labelledby="titulo-windows">
+    <h2 id="titulo-windows">Windows</h2>
+    <p class="marca-sistema" id="marca-windows" hidden>Parece que estás en Windows</p>
+
+    <p class="requisitos">Windows de <strong>64 bits (x64)</strong>. <strong>No funciona en
+    Windows ARM.</strong> Probado en Windows&nbsp;10; en Windows&nbsp;11 se probó una versión
+    anterior.</p>
+
+    <div class="avisos">
+      <h3>Tres cosas que van a pasar, y son normales</h3>
+
+      <div class="aviso">
+        <p class="aviso-titulo">1. Va a salir un cartel azul: «Windows protegió tu PC»</p>
+        <p>No es un virus. Sale porque el instalador todavía <strong>no está firmado</strong>, y
+        Windows no reconoce al autor. Le pasa a cualquier programa sin firma. Para seguir:
+        apretá <strong>«Más información»</strong> y después
+        <strong>«Ejecutar de todas formas»</strong>.</p>
+      </div>
+
+      <div class="aviso">
+        <p class="aviso-titulo">2. Va a pedir permisos de administrador</p>
+        <p>Windows pregunta si permitís que la aplicación haga cambios en el equipo. Hay que
+        decirle que sí para que el instalador pueda dejar todo configurado de una vez.
+        <strong>En el hospital esto lo hace informática.</strong></p>
+      </div>
+
+      <div class="aviso">
+        <p class="aviso-titulo">3. Puede faltar un componente de Microsoft</p>
+        <p>Si aparece un cartel que dice que falta el <strong>«Microsoft Visual C++ 2015-2022
+        Redistributable (x64)»</strong>, hay que instalar ese paquete de Microsoft
+        (<strong>vc_redist.x64.exe</strong>), <strong>reiniciar</strong> la computadora y volver
+        a abrir el instalador de CeiboLink. Hasta que eso esté,
+        <strong>CeiboLink no instala nada</strong>: avisa y se detiene.</p>
+      </div>
+    </div>
+
+    <p class="caja-boton">
+      <a class="boton" id="boton-windows"
+         href="https://github.com/Maicol85/ceibolink-descargas/releases/download/v1.4.0/CeiboLink-1.4.0-windows-x64.exe">Para
+      Windows</a>
+    </p>
+
+    <dl class="ficha">
+      <dt>Archivo</dt><dd><code>CeiboLink-1.4.0-windows-x64.exe</code></dd>
+      <dt>Tamaño</dt><dd>17.875.795 bytes (17,0 MiB)</dd>
+      <dt>Huella SHA-256</dt>
+      <dd><code class="huella">24c9c30b0a7b2dc6b77171c173b1e9bcf87e4f9f4f4efd2dffa653d02380e491</code></dd>
+    </dl>
+
+    <h3>Cómo instalarlo</h3>
+    <ol>
+      <li>Bajá el archivo con el botón de arriba. Termina en <code>.exe</code> y queda en tu
+      carpeta de Descargas.</li>
+      <li>Abrilo con doble clic y pasá los tres carteles de más arriba.</li>
+      <li>Pasá la pantalla de licencia y seguí los pasos del instalador.</li>
+      <li>Al terminar, abrí <strong>Inicio → CeiboLink → Vincular CeiboLink</strong>. Te muestra
+      un código de 6 dígitos.</li>
+      <li>En EcoSmart, entrá a Configuración y escribí el código. Sirve una sola vez y vence a
+      los 10 minutos.</li>
+    </ol>
+    <p class="quitar">Para sacarlo: <strong>Configuración → Aplicaciones instaladas → CeiboLink
+    → Desinstalar</strong>, o el atajo <strong>«CeiboLink - Quitar de esta computadora»</strong>.
+    Te avisa cuántas imágenes hay esperando sin guardar y te pide confirmación antes de borrar
+    nada.</p>
+  </section>
+
+  <!-- Mac -->
+  <section class="tarjeta" id="tarjeta-mac" aria-labelledby="titulo-mac">
+    <h2 id="titulo-mac">Mac</h2>
+    <p class="marca-sistema" id="marca-mac" hidden>Parece que estás en una Mac</p>
+
+    <p class="requisitos">El instalador trae las dos arquitecturas (chip Apple e Intel), pero
+    <strong>hasta ahora sólo se probó en una Mac con chip Apple</strong>. En Mac con chip Intel
+    todavía no se probó.</p>
+
+    <div class="avisos">
+      <h3>macOS te va a frenar una vez, y se resuelve en un minuto</h3>
+
+      <div class="aviso">
+        <p class="aviso-titulo">Va a decir que no pudo verificar al desarrollador</p>
+        <p>La primera vez que abras el instalador, macOS va a decir que no pudo verificar quién
+        hizo CeiboLink, y <strong>no te va a dejar abrirlo</strong>. Es lo que tiene que pasar.
+        Pasa porque CeiboLink todavía <strong>no está firmado</strong>. El cartel no dice que
+        CeiboLink tenga un virus: dice que Apple no revisó quién lo hizo.</p>
+        <ol>
+          <li>Doble clic en el instalador. Aparece el cartel. Apretá <strong>Listo</strong>, no
+          «Mover a la papelera».</li>
+          <li>Abrí <strong>Ajustes del Sistema → Privacidad y seguridad</strong> y bajá hasta el
+          final. Vas a ver una línea con el nombre del instalador y un botón <strong>«Abrir de
+          todas formas»</strong>. Apretalo y poné tu contraseña.</li>
+          <li>Doble clic en el instalador otra vez. Ahora sí abre.</li>
+        </ol>
+        <p>Si en Privacidad y seguridad no te aparece esa línea, es porque pasó demasiado rato
+        desde que lo intentaste. Hacé doble clic en el instalador de nuevo y volvé a mirar ahí
+        enseguida. <strong>Los nombres de los menús pueden variar según tu versión de
+        macOS.</strong></p>
+      </div>
+    </div>
+
+    <p class="caja-boton">
+      <a class="boton" id="boton-mac"
+         href="https://github.com/Maicol85/ceibolink-descargas/releases/download/v1.4.0/CeiboLink-1.4.0.pkg">Para
+      Mac</a>
+    </p>
+
+    <dl class="ficha">
+      <dt>Archivo</dt><dd><code>CeiboLink-1.4.0.pkg</code></dd>
+      <dt>Tamaño</dt><dd>44.910.371 bytes (42,8 MiB)</dd>
+      <dt>Huella SHA-256</dt>
+      <dd><code class="huella">35223cffa481198a431d08bc99e2431d071b8b0eaffba2105773aabd1d112ec9</code></dd>
+    </dl>
+
+    <h3>Cómo instalarlo</h3>
+    <ol>
+      <li>Bajá el archivo con el botón de arriba. Termina en <code>.pkg</code> y queda en tu
+      carpeta de Descargas.</li>
+      <li>Abrilo con doble clic y seguí los tres pasos del cartel de más arriba.</li>
+      <li>Seguí los pasos del instalador. Te va a pedir tu contraseña o tu huella.</li>
+      <li>Al terminar, abrí <strong>«Vincular CeiboLink»</strong> desde la carpeta Aplicaciones.
+      Te muestra un código de 6 dígitos.</li>
+      <li>En EcoSmart, entrá a Configuración y escribí el código. Sirve una sola vez y vence a
+      los 10 minutos.</li>
+    </ol>
+    <p class="quitar">Para sacarlo: abrí <strong>«Desinstalar CeiboLink»</strong> desde
+    Aplicaciones. Te avisa cuántas imágenes hay esperando sin guardar y te pide confirmación
+    antes de borrar nada.</p>
+  </section>
+
+  </div><!-- /.sistemas -->
+
+  <section class="bloque" aria-labelledby="titulo-navegador">
+    <h2 id="titulo-navegador">Con qué navegador</h2>
+    <p>EcoSmart abierto en <strong>Chrome</strong>. Edge todavía no se probó.
+    <strong>Safari no funciona por ahora.</strong></p>
+  </section>
+
+  <section class="bloque" aria-labelledby="titulo-verificar">
+    <h2 id="titulo-verificar">Verificá el archivo que bajaste</h2>
+    <p>Cada instalador de acá arriba publica su huella (SHA-256). Si la del archivo que bajaste
+    no es exactamente esa, <strong>no lo abras</strong>.</p>
+    <p>En Mac, en la Terminal: <code>shasum -a 256</code> seguido del nombre del archivo.<br>
+    En Windows, en <code>cmd</code>: <code>certutil -hashfile</code> seguido del nombre del
+    archivo y de <code>SHA256</code>.</p>
+  </section>
+
+  <section class="bloque cuidados" aria-labelledby="titulo-cuidados">
+    <h2 id="titulo-cuidados">Cuidados</h2>
+    <ul>
+      <li>CeiboLink traslada imágenes. No las interpreta, no mide nada y no sugiere ningún
+      diagnóstico. No es un dispositivo médico certificado.</li>
+      <li>Recomendamos activar FileVault (el cifrado del disco) en la computadora donde corra
+      CeiboLink.</li>
+      <li>En una computadora de una institución, consultá antes con informática.</li>
+    </ul>
+  </section>
+
+  <section class="bloque" aria-labelledby="titulo-orthanc">
+    <h2 id="titulo-orthanc">Orthanc (licencia GPLv3+)</h2>
+    <p>CeiboLink incluye Orthanc como receptor de imágenes, tal como lo publica su proyecto.
+    CeiboLink no lo compiló, no lo modificó y no lo firmó. La versión, el código fuente y la
+    huella del programa incluido figuran en la página de cada versión. El texto completo de la
+    licencia viene dentro del instalador.</p>
+    <ul>
+      <li>Versión incluida: <strong>Orthanc 1.13.0</strong></li>
+      <li>Sitio del proyecto:
+      <a href="https://orthanc.uclouvain.be/">https://orthanc.uclouvain.be/</a></li>
+      <li>Código fuente:
+      <a href="https://orthanc.uclouvain.be/downloads/sources/orthanc/Orthanc-1.13.0.tar.gz">Orthanc-1.13.0.tar.gz</a></li>
+    </ul>
+  </section>
+
+</main>
+
+<footer class="pie">
+  <p>Si un botón no baja el archivo, entrá a
+  <a href="https://github.com/Maicol85/ceibolink-descargas/releases/tag/v1.4.0">la página de la
+  versión 1.4.0</a> y bajá el archivo desde la sección Assets.</p>
+  <p>CeiboMed · CeiboLink 1.4.0</p>
+</footer>
+
+<script src="descarga.js"></script>
+</body>
+</html>
